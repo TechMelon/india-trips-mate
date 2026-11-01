@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>India&#39;s Trip Mate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
@@ -493,6 +493,144 @@ html,body{max-width:100%}
   .hl2 h1{font-size:68px}
   .tiles{max-width:720px}
 }
+
+/* ===== mobile app experience (phones) ===== */
+.bbar{display:none;position:fixed;left:10px;right:10px;bottom:calc(8px + env(safe-area-inset-bottom));z-index:80;height:62px;background:#fffffff2;border:1px solid #fff;border-radius:26px;box-shadow:0 10px 30px #0b6e7545;align-items:center;justify-content:space-around;padding:0 6px}
+.bbar button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:11px;font-weight:800;color:#5b8a8e;padding:6px 0;border-radius:18px;min-width:0;height:100%;font-family:inherit}
+.bbar button i{font-style:normal;font-size:21px;line-height:1}
+.bbar button.on{color:#0e8c92;background:#e4faf5}
+.bbar button.fab{flex:0 0 60px;height:60px;margin-top:-28px;border-radius:50%;background:linear-gradient(135deg,#10959b,#2cc0b0);color:#fff;box-shadow:0 10px 22px #10959b66;border:3px solid #fff}
+.bbar button.fab i{font-size:22px}
+.pc p{cursor:pointer}
+#right>.card>h3{cursor:default}
+
+@media(max-width:700px){
+  html{-webkit-text-size-adjust:100%}
+  body{font-size:16px;-webkit-tap-highlight-color:transparent}
+  button,.tile,.tcard,.nrow,.aibtn,select{touch-action:manipulation}
+  button:active,.tile:active,.tcard:active,.nrow:active,.aibtn:active{transform:scale(.97);transition:transform .08s}
+  input,select,textarea{font-size:16px}
+
+  /* slim header; the bottom bar replaces the link row */
+  .top{position:sticky;top:6px;margin:6px 10px 0;padding:6px 10px;border-radius:20px;min-height:52px;flex-wrap:nowrap;gap:8px}
+  .nav,.nbtn.fill{display:none}
+  .logo{flex:1 1 auto}
+  .logo svg{width:34px;height:34px}
+  .logo div{font-size:17px;white-space:nowrap}
+  .logo small{display:inline;margin-left:4px;font-size:17px}
+  .nbtn{padding:8px 14px;font-size:14px;min-height:40px;border-radius:22px}
+  .bbar{display:flex}
+  .view{padding:12px 12px calc(110px + env(safe-area-inset-bottom))}
+  #favs{top:62px;right:10px}
+
+  /* home */
+  .herocard{padding:18px 14px 14px;border-radius:26px;box-shadow:0 14px 40px #10959b2a}
+  .hl2 h1{font-size:clamp(30px,9.4vw,40px);line-height:1.05}
+  .hl2>p{font-size:15.5px;line-height:1.5}
+  .searchcard{padding:12px;box-shadow:0 8px 24px #10959b30}
+  .sf label{font-size:12.5px}
+  .sf input{padding:4px 0}
+  .micb{width:46px;height:46px;border-radius:14px}
+  .sgo{width:52px;height:52px}
+  .tiles{gap:9px}
+  .tile{min-height:92px;padding:12px 4px;font-size:12.5px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .tile em{font-size:28px}
+  .scene{width:112%;margin:4px -6% 0}
+  .bottom{gap:16px}
+  .car{gap:12px;padding:4px 14px 8px;margin:0 -14px;scroll-padding:0 14px;scroll-snap-type:x mandatory}
+  .tcard{min-width:62vw;max-width:250px;border-radius:22px;padding:7px}
+  .tcard .art{height:132px;border-radius:17px}
+  .tcard b{font-size:16px;margin:8px 6px 0}.tcard small{font-size:13px}
+  .tcard .th{width:36px;height:36px;font-size:17px}
+  .aibox{padding:6px 6px 6px 14px;border-radius:18px}
+  .aibox input{padding:10px 0}
+  .aiex{flex-wrap:nowrap;overflow-x:auto;margin:10px -14px 0;padding:0 14px 4px;scrollbar-width:none}
+  .aiex::-webkit-scrollbar{display:none}
+  .aiex button{flex:0 0 auto;padding:8px 14px;font-size:13px;border-radius:20px}
+
+  /* place page: photo hero with an overlapping title card */
+  .placesearch{margin-bottom:10px}
+  .sbar{padding:5px 5px 5px 14px}
+  .pop{margin-top:8px}
+  .pop button{padding:8px 14px;font-size:13.5px}
+  #placecard{padding:10px}
+  .pc{display:block}
+  .pc .imgw{height:240px;min-height:0}
+  .pc .imgw .art{height:100%;min-height:0;aspect-ratio:auto;border-radius:20px}
+  .pc>div:last-child{position:relative;margin:-52px 8px 0;padding:14px 16px;background:#ffffffee;border-radius:22px;box-shadow:0 10px 28px #0b6e7533}
+  .pc h2{font-size:25px}
+  .pc p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:14.5px;line-height:1.5}
+  .pc p.open{display:block}
+  .pc p:not(.open):after{content:""}
+  .tag{padding:4px 12px;font-size:13px}
+  .credit{font-size:10.5px;bottom:62px;left:12px}
+  .heart{width:42px;height:42px;font-size:20px;top:12px;right:12px}
+  .info{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding:4px 2px 8px;margin:12px -2px 0;scrollbar-width:none}
+  .info::-webkit-scrollbar{display:none}
+  .info>div{flex:0 0 74%;scroll-snap-align:start;font-size:13.5px;padding:12px}
+  .info b{font-size:15px}
+  .tabs{position:sticky;top:64px;z-index:15;padding:5px;border-radius:20px;box-shadow:0 8px 22px #0b6e7530;background:#ffffffee;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{padding:11px 15px;font-size:14.5px;border-radius:15px;font-weight:700}
+  .card{padding:14px;border-radius:22px}
+  .card h3{font-size:18px}
+  .ctl{font-size:14px}
+  input[type=range]{height:34px}
+  .nrow{grid-template-columns:90px minmax(0,1fr) 16px;gap:2px 12px;padding:11px 6px}
+  .art.sm{width:90px;height:68px;border-radius:14px}
+  .nrow b{font-size:16.5px}
+  .nrow .dist,.nrow .price{font-size:13.5px}
+  .tl{font-size:14.5px}
+  .tl li{padding:5px 0 5px 24px}
+
+  /* right-hand cards become tap-to-open sections */
+  #right>.card>h3{cursor:pointer;justify-content:flex-start}
+  #right>.card>h3:after{content:"▾";margin-left:auto;font-size:18px;color:#0e8c92;transition:transform .2s}
+  #right>.card.closed>h3:after{transform:rotate(-90deg)}
+  #right>.card.closed>*:not(h3){display:none}
+  #right>.card.closed{padding-bottom:12px}
+  #right>.card.closed>h3{margin:0}
+
+  /* explore */
+  .glass h3{font-size:19px}
+  .exctl{position:sticky;top:64px;z-index:12;background:#ffffffee;padding:8px;border-radius:18px;box-shadow:0 6px 18px #0b6e7526;margin-bottom:12px}
+  .exctl input,.exctl select{padding:12px 14px;border-radius:14px;min-height:46px}
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .pgrid .tcard{min-width:0;max-width:none}
+  .pgrid .tcard .art{height:104px}
+
+  /* planner = bottom sheet */
+  .modal{align-items:flex-end;padding:0;overflow:hidden}
+  .mbox{width:100%;max-width:none;margin:0;border-radius:28px 28px 0 0;max-height:92vh;overflow-y:auto;padding:12px 16px calc(28px + env(safe-area-inset-bottom));animation:sheetUp .32s cubic-bezier(.2,.9,.3,1);overscroll-behavior:contain}
+  .mbox:before{content:"";display:block;width:46px;height:5px;border-radius:3px;background:#c9ddda;margin:0 auto 12px}
+  .mbox .close{top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:#eef7f5;font-size:18px}
+  .mbox h2{font-size:21px;padding-right:40px}
+  .aitiers{gap:8px}
+  .aitiers button{flex:1 1 30%;padding:10px 4px;border-radius:14px;font-size:13px}
+  .aisum{gap:8px}.aisum b{font-size:18px}
+  .aibtn{padding:10px 18px;min-height:42px}
+  .aiact{gap:6px}
+}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+@media(max-width:700px) and (orientation:landscape){
+  .bbar{height:52px}.bbar button i{font-size:18px}.bbar button.fab{height:50px;flex-basis:50px;margin-top:-20px}
+  .pc .imgw{height:180px}
+}
+
+/* planner sheet: solid background, travel legs as cards on phones */
+.mbox{background:#fbfffe!important}
+@media(max-width:700px){
+  .aileg,.aileg tbody,.aileg tr,.aileg td{display:block;width:100%}
+  .aileg tr:first-child{display:none}
+  .aileg tr{border:1px solid #cfeae3;border-radius:16px;padding:10px 12px;margin:8px 0;background:#f6fdfb}
+  .aileg td{border:0;padding:3px 0;font-size:14px}
+  .aileg td:nth-child(2){color:#0e8c92;font-weight:800;font-size:15px}
+  .aileg td:nth-child(3){font-size:13px!important;color:#4f7a7f}
+  .aileg td:nth-child(4){margin-top:6px;background:#e4faf5;border-radius:12px;padding:8px 10px}
+  .mbox .tw{overflow:visible}
+}
+html,body{overscroll-behavior-x:none}
+.car,.tabs,.info,.nav,.aiex,#chips,.pop{overscroll-behavior-x:contain}
 </style>
 </head>
 <body>
@@ -660,6 +798,13 @@ html,body{max-width:100%}
     <div class="cols" id="cols"><div id="left"></div><div id="right"></div></div>
   </section>
 </main>
+<nav class="bbar" id="bbar" aria-label="Main navigation">
+  <button data-n="home" onclick="navTo('home')"><i>🏠</i>Home</button>
+  <button data-n="explore" onclick="navTo('explore')"><i>🧭</i>Explore</button>
+  <button class="fab" onclick="aiFocus()" aria-label="Plan a trip with AI"><i>✨</i>Plan</button>
+  <button data-n="cost" onclick="navTo('cost')"><i>🪙</i>Cost</button>
+  <button data-n="tips" onclick="navTo('tips')"><i>📖</i>Guide</button>
+</nav>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <filter id="furF" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency=".11" numOctaves="1" seed="5" result="warp"/>
@@ -1238,7 +1383,7 @@ function placeCard(p){
     <div class="imgw">${art(p,"",true)}${p.ph?`<a class="credit" href="${p.ph.p}" target="_blank" rel="noopener" title="Photo from Wikipedia / Wikimedia Commons">📷 ${p.ph.t} · Wikipedia</a>`:""}<button class="heart" onclick="toggleFav()" title="Save">${fav?"❤️":"🤍"}</button></div>
     <div><h2>${p.n}</h2><div class="loc">📍 ${p.s}</div>
     <div class="tags">${p.t.map((t,i)=>`<span class="tag t${i%4}">${t}</span>`).join("")}</div>
-    <p>${p.d}</p></div></div>
+    <p onclick="this.classList.toggle('open')" title="Tap to read more">${p.d}</p></div></div>
     <div class="info">
       <div class="i0"><em>🎟️</em><div><b>Entry Fee</b>${fm}<span>${fr}</span></div></div>
       <div class="i1"><em>🕒</em><div><b>Best Time</b>${p.best}</div></div>
@@ -1322,6 +1467,7 @@ function render(p){
   $("left").innerHTML=placeCard(p)+`<div class="tabs" id="tabs">${TABS.map(t=>`<button data-t="${t[0]}" onclick="setTab('${t[0]}')">${t[1]}</button>`).join("")}</div><div id="panel"></div>`;
   $("right").innerHTML=`<div class="card" id="itincard"></div><div class="card" id="costcard"></div><div class="card"><h3>📍 Distance Map</h3><div class="map">${mapSVG(p)}</div><p class="note">Direction &amp; relative distance to the 5 closest places. Tap a label to open it.</p></div>`;
   setTab(tab,true);renderItin();renderCostCard();
+  $("costcard").classList.add("closed");if($("right").children[2])$("right").children[2].classList.add("closed");
   $("q").value=p.n;
   document.title="India's Trip Mate";
 }
@@ -1330,7 +1476,7 @@ function setTab(t,keep){
   document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));
   panel();if(!$("v-place").hidden)setNav(["itin","cost","tips"].includes(t)?t:"explore");
 }
-function setNav(t){document.querySelectorAll("#nav button,#side button").forEach(b=>b.classList.toggle("on",b.dataset.n===t));}
+function setNav(t){document.querySelectorAll("#nav button,#side button,#bbar button").forEach(b=>b.classList.toggle("on",b.dataset.n===t));}
 function toggleFav(){const n=current.n;favs=favs.includes(n)?favs.filter(x=>x!==n):[...favs,n];saveFavs();document.querySelector(".heart").textContent=favs.includes(n)?"❤️":"🤍";favUI();}
 function favUI(){$("favn").hidden=!favs.length;$("favn").textContent=favs.length;}
 function toggleFavs(){const f=$("favs");f.hidden=!f.hidden;
@@ -1676,7 +1822,7 @@ function aiRender(){
     else h+=`<p class="aiok">🌤️ Good timing — ${AI_MONTHS[sp.month][0].toUpperCase()+AI_MONTHS[sp.month].slice(1)} suits ${A.stops.length>1?"these places":A.stops[0].n}.</p>`;
   }
   if(A.legs.length){
-    h+=`<h3 class="aih">🚆 Getting around</h3><div class="tw"><table><tr><th>Leg</th><th>Distance</th><th>Options</th><th>Your pick (${names[t]})</th></tr>${A.legs.map((l,i)=>{const m=l.m,pk=T.picks[i];
+    h+=`<h3 class="aih">🚆 Getting around</h3><div class="tw"><table class="aileg"><tr><th>Leg</th><th>Distance</th><th>Options</th><th>Your pick (${names[t]})</th></tr>${A.legs.map((l,i)=>{const m=l.m,pk=T.picks[i];
       const opts=[`🚗 taxi ${inr(m.taxi)} (${aiH(m.busH)})`,m.trainLo?`🚆 train ${inr(m.trainLo)}–${inr(m.trainHi)} pp (${aiH(m.trainH)})`:"",m.fly?`✈️ flight ~${inr(m.fly)} pp (${aiH(m.flyH)} door-to-door)`:"",`🚌 bus ${inr(m.bus)} pp`].filter(Boolean);
       return `<tr><td><b>${l.a.n}</b> → <b>${l.b.n}</b><br><small style="color:var(--mute)">${l.kind}</small></td><td>${Math.round(m.km)} km</td><td style="font-size:12.5px">${opts.join("<br>")}</td><td><b>${pk.mode}</b><br>${inr(pk.pp)} pp · ${aiH(pk.h)}</td></tr>`;}).join("")}</table></div>`;
   }
@@ -1736,6 +1882,43 @@ buildTrending();
 showView("home");
 
 const goName=n=>{const p=P.find(x=>x.n===n);if(p)go(p);};
+
+// ================= MOBILE EXPERIENCE =================
+const isMob=()=>matchMedia("(max-width:700px)").matches;
+function aiFocus(){
+  navTo("home");
+  setTimeout(()=>{const a=$("aiq");a.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>a.focus({preventScroll:true}),400);},80);
+}
+// a tiny haptic tick on taps (Android Chrome)
+document.addEventListener("click",e=>{if(navigator.vibrate&&e.target.closest&&e.target.closest(".bbar button,.tabs button,.tile,.tcard,.nrow,.aitiers button"))navigator.vibrate(8);},true);
+// the right-hand cards (itinerary / cost / map) open and close with a tap on their title
+$("right").addEventListener("click",e=>{
+  const h=e.target.closest("h3");if(!h||!isMob())return;
+  const c=h.parentElement;if(c&&c.parentElement===$("right"))c.classList.toggle("closed");
+});
+// swipe left / right to move between the place tabs
+(function(){
+  const box=$("left");let sx=0,sy=0,ok=false;
+  box.addEventListener("touchstart",e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;ok=!!e.target.closest("#panel")&&!e.target.closest(".tw,input,select,.info");},{passive:true});
+  box.addEventListener("touchend",e=>{
+    if(!ok||!isMob())return;const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;
+    if(Math.abs(dx)<80||Math.abs(dx)<Math.abs(dy)*2)return;
+    const i=TABS.findIndex(x=>x[0]===tab),n=Math.max(0,Math.min(TABS.length-1,i+(dx<0?1:-1)));
+    if(n!==i){setTab(TABS[n][0]);const b=document.querySelector('#tabs button[data-t="'+TABS[n][0]+'"]');if(b)b.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});}
+  },{passive:true});
+})();
+// the planner is a bottom sheet: drag it down to close
+(function(){
+  const m=$("mbox"),md=$("modal");let sy=0,dy=0,on=false;
+  m.addEventListener("touchstart",e=>{if(!isMob()||m.scrollTop>0)return;sy=e.touches[0].clientY;dy=0;on=true;m.style.transition="none";},{passive:true});
+  m.addEventListener("touchmove",e=>{if(!on)return;dy=e.touches[0].clientY-sy;if(dy>0)m.style.transform="translateY("+dy+"px)";else dy=0;},{passive:true});
+  m.addEventListener("touchend",()=>{
+    if(!on)return;on=false;m.style.transition="transform .25s";
+    if(dy>120){m.style.transform="translateY(100%)";setTimeout(()=>{md.hidden=true;m.style.transform="";m.style.transition="";},230);}
+    else m.style.transform="";
+  },{passive:true});
+})();
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$("modal").hidden=true;});
 
 // ================= BAO THE PANDA =================
 // Eyes follow the cursor, reacts to actions, and gives a tip only occasionally
@@ -1834,7 +2017,7 @@ const goName=n=>{const p=P.find(x=>x.n===n);if(p)go(p);};
 
   // --- life: the kitten really walks, jumps, perches, grooms, sleeps and falls (no teleporting)
   let cw=cat.offsetWidth||140,ch=cat.offsetHeight||150;const W=()=>cw,H=()=>ch;addEventListener("resize",()=>{cw=cat.offsetWidth||cw;ch=cat.offsetHeight||ch;});
-  const floorY=()=>innerHeight-H()-2;
+  const floorY=()=>innerHeight-H()-2-(isMob()?76:0);
   const clampX=x=>Math.max(4,Math.min(innerWidth-W()-4,x));
   let px=clampX(innerWidth-W()-24),py=floorY(),face=1,st="sit",vy=0,tx=0,speed=95,onArrive=null,jump=null,perch=null,perchUntil=0,nextAct=Date.now()+7000,dragMoved=false,lastF=performance.now();
   const bubVisible=()=>!bub.classList.contains("off");
