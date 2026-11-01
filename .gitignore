@@ -1,0 +1,6 @@
+# old prototype, not part of the site
+index-old.html
+# editor / OS junk
+.DS_Store
+Thumbs.db
+*.bak
