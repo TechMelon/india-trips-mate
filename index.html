@@ -396,7 +396,104 @@ body:before,body:after{display:none!important}
 .pgrid .tcard{content-visibility:auto;contain-intrinsic-size:176px 190px}
 .nrow{content-visibility:auto;contain-intrinsic-size:60px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-.an.a2{animation:driftX 19s ease-in-out infinite alternate-reverse}.scene.paused .an{animation-play-state:paused}</style>
+.an.a2{animation:driftX 19s ease-in-out infinite alternate-reverse}.scene.paused .an{animation-play-state:paused}
+/* ===== responsive: phones, tablets, laptops, big monitors ===== */
+html,body{max-width:100%}
+.herocard>*,.bottom>*,.cols>*,.hl2,.pc>*,.glass,.card,.carwrap{min-width:0}
+.view{max-width:1600px;margin-left:auto;margin-right:auto}
+.top{max-width:1600px}
+@media(min-width:1650px){.top{margin-left:auto;margin-right:auto}}
+.scene{width:106%;margin:-40px -10px -30px -20px}
+/* grid columns that can shrink (plain 1fr lets wide children blow the layout out) */
+@media(max-width:1100px){.cols{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:1000px){
+  .herocard{grid-template-columns:minmax(0,1fr);padding:30px 24px 22px}
+  .bottom{grid-template-columns:minmax(0,1fr)}
+  .scene{width:100%;margin:6px 0 0}
+  .hl2>p{max-width:none}
+  .hl2 .swrap{max-width:none}
+  .tiles{max-width:none}
+}
+@media(max-width:900px){
+  .pc{grid-template-columns:minmax(0,1fr)}
+  .pc .imgw .art{min-height:200px;aspect-ratio:16/10;height:auto}
+  .view{padding:12px 14px 120px}
+  .pop{width:100%;max-width:100%}
+  #chips{flex-wrap:nowrap}
+  .tabs{-webkit-overflow-scrolling:touch;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+  .ctl{gap:10px}
+  .mbox{padding:18px 16px}
+  .modal{padding:14px 8px}
+}
+@media(max-width:700px){
+  .top{margin:8px 8px 0;padding:8px 10px;gap:8px;border-radius:24px;justify-content:space-between}
+  .logo{flex:1 1 auto;min-width:0}
+  .logo div{white-space:normal;line-height:1.05;font-size:15px}
+  .logo small{display:block;margin:0;font-size:15px}
+  .logo svg{width:34px;height:34px}
+  .nbtn{padding:6px 10px;font-size:12.5px}
+  .nav{order:3;flex:0 0 100%;width:100%;overflow-x:auto;justify-content:flex-start;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+  .nav button{padding:7px 11px;font-size:13px}
+  .herocard{padding:22px 16px 18px;border-radius:28px;min-height:0;gap:6px}
+  .hl2 .badge{font-size:13px;padding:6px 12px}
+  .hl2 h1{font-size:clamp(30px,9vw,40px);margin:14px 0 10px}
+  .hl2>p{font-size:15px}
+  .hl2 .swrap{margin:18px 0 16px}
+  .searchcard{flex-wrap:wrap;gap:8px 10px;padding:12px;border-radius:20px}
+  .sf.grow{flex:1 1 100%}
+  .sf:not(.grow){flex:1 1 120px}
+  .sf input,.sf select{font-size:16px}
+  .micb{width:42px;height:42px}
+  .sgo{width:50px;height:50px;font-size:19px;border-radius:14px}
+  .hl2 .sugg{top:auto;left:0;right:0;margin-top:6px;position:absolute}
+  .tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .tile{padding:10px 4px;font-size:12px;border-radius:18px}
+  .tile em{font-size:26px;margin-bottom:3px}
+  .bottom{margin-top:16px;gap:14px}
+  .glass{padding:14px;border-radius:24px}
+  .glass h3{font-size:18px}
+  .arr{display:none}
+  .car{padding:2px 2px 6px;scroll-snap-type:x mandatory}
+  .tcard{min-width:150px;scroll-snap-align:start}
+  .aibox{padding:6px 6px 6px 12px}
+  .aiex button{font-size:12px}
+  .pc h2{font-size:26px}
+  .info{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .info>div{padding:10px;font-size:12.5px}
+  .tabs button{padding:9px 13px;font-size:14px}
+  .nrow{grid-template-columns:76px minmax(0,1fr) 16px;gap:4px 10px}
+  .nrow .dist,.nrow .price{grid-column:2;font-size:13px}
+  .art.sm{width:76px;height:52px}
+  .crow{font-size:13.5px}
+  .pgrid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+  .exctl input{min-width:0;flex:1 1 100%}
+  .aitiers button{min-width:0;flex:1 1 30%;padding:8px 4px;font-size:13px}
+  .aisum{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aistop{padding:10px}
+  th,td{padding:7px 6px}
+  .tl li{grid-template-columns:78px 1fr}
+  #cat{width:92px}
+  .catbub{width:min(240px,66vw);font-size:13px}
+  #cat.left .catbub{left:30px}
+}
+@media(max-width:400px){
+  .info{grid-template-columns:minmax(0,1fr)}
+  .tiles{gap:6px}
+  .tile{font-size:11.5px}
+  .nbtn{padding:6px 8px;font-size:12px}
+  .logo div,.logo small{font-size:14px}
+}
+/* short landscape phones */
+@media(max-height:480px) and (orientation:landscape){
+  .top{position:static}
+  #cat{width:80px}
+}
+/* big monitors: keep the line lengths comfortable */
+@media(min-width:1800px){
+  .hl2 h1{font-size:68px}
+  .tiles{max-width:720px}
+}
+</style>
 </head>
 <body>
 <header class="top">
